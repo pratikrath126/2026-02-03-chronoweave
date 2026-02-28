@@ -1,1 +1,123 @@
-<html><head><title>ChronoWeave</title><style>body { font-family: Arial, sans-serif; }</style></head><body><h1>ChronoWeave</h1><p>An interactive timeline weaver that visualizes personal time as a flowing, generative art piece.</p></body></html>
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Weaver's Loom Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1313ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#080812",
+                        "slate-custom": "#1c1c27",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glow-overlay {
+            background: radial-gradient(circle at center, rgba(19, 19, 236, 0.15) 0%, transparent 70%);
+        }
+        .weave-gradient {
+            background: linear-gradient(135deg, #1313ec 0%, #6366f1 50%, #a855f7 100%);
+        }
+        .glass-card {
+            background: rgba(28, 28, 39, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between px-6 pt-12 pb-4 bg-transparent z-10">
+<button class="flex items-center justify-center size-10 rounded-full glass-card">
+<span class="material-symbols-outlined text-slate-100">menu</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-slate-100">The Weaver's Loom</h1>
+<button class="flex items-center justify-center size-10 rounded-full glass-card">
+<span class="material-symbols-outlined text-slate-100">account_circle</span>
+</button>
+</header>
+<!-- Main Content Area: Generative Art Focus -->
+<main class="relative flex-1 flex flex-col items-center justify-center px-6 overflow-hidden">
+<!-- Central Visualization (Represented by a styled container and background) -->
+<div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
+<div class="relative w-full h-full max-w-md aspect-[9/16] bg-background-dark overflow-hidden">
+<!-- Placeholder for the Generative Loom Art -->
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Ethereal flowing glowing threads of blue and purple light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBp9JJBQwjTEA7G8MgwCteC65-OjOkVlGxigNVdCzMQHTsUIUTYYsBuxhRx0uJ4eK1997iICQkUgwquKye__rVPYvjRkQapxiw71iXCk7uXrLe0hUtvSlZ0Nq-ULeHdSdqjNzbsdYCatOXOUYpt4UWJlDZdeqflKA1HxKal2N6jzmQqMCr201DWJIqyUXsYddg3Mm1VyBDw3NEbUfcixeRhczICOf5e2ONKJNN1IQySLbXgP5DzFvecdez95eGcrPISBE-SB2Xz5PU')">
+</div>
+<!-- Interactive Glow Overlays -->
+<div class="absolute inset-0 glow-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-background-dark/40"></div>
+</div>
+</div>
+<!-- Floating UI Elements -->
+<div class="relative z-10 w-full flex flex-col items-center gap-8 mt-auto pb-12">
+<!-- Life Chapter Card -->
+<div class="w-full glass-card rounded-xl p-6 flex flex-col items-center text-center">
+<span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-1">Current Chapter</span>
+<h2 class="text-2xl font-bold text-slate-100 mb-2">The Infinite Bloom</h2>
+<p class="text-sm text-slate-400 leading-relaxed max-w-[280px]">
+                    Your life's tapestry is evolving. Every moment adds a thread to the eternal weave.
+                </p>
+<!-- Progress Indicators -->
+<div class="flex gap-1.5 mt-6">
+<div class="h-1 w-8 rounded-full bg-primary"></div>
+<div class="h-1 w-2 rounded-full bg-slate-700"></div>
+<div class="h-1 w-2 rounded-full bg-slate-700"></div>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="group relative flex items-center justify-center px-12 py-4 rounded-full overflow-hidden shadow-[0_0_30px_rgba(19,19,236,0.4)]">
+<div class="absolute inset-0 weave-gradient"></div>
+<div class="relative flex items-center gap-3">
+<span class="material-symbols-outlined text-white">auto_awesome</span>
+<span class="text-white font-bold tracking-wide">WEAVE MOMENT</span>
+</div>
+</button>
+<p class="text-xs text-slate-500 font-medium">Touch the loom to influence the flow</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="relative z-10 glass-card mx-6 mb-8 rounded-full border-none px-2 py-2">
+<div class="flex items-center justify-between">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 rounded-full bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="Aperture">blur_circular</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Loom</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="LineSegments">timeline</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Archive</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="Books">auto_stories</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Chapters</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="User">settings</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Core</p>
+</a>
+</div>
+</nav>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-6 w-full"></div>
+</body></html>
