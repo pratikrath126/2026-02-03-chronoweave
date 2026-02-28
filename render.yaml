@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: scholar-nexus-app
+    env: static
+    buildCommand: echo "No build command needed"
+    staticPublishPath: .
+    autoDeploy: yes
